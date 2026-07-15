@@ -27,5 +27,5 @@ const int i2cController_Group = 8;
 const int Console_Group = 3;
 const int Fan_Group = 18;
 const int FPGAConf_Group = 20;
-const int CPUNetCtrl_Group = 92;
-const int ZIPCtrlDBG_Group = 53;
+const int CPUNetCtrl_Group = 91;
+const int ZIPCtrlDBG_Group = 51;
