@@ -1,24 +1,39 @@
 **Disclaimer: The Documentation is AI-generated and may make mistakes**
 
-### Implementation
+# Ethernet Switch GUI
 
-The motivation for creating a GUI for the Ethernet switch lies in the need to visualize and manage the switch's internal registers, which are crucial for network operations. The switch operates at the network layer, and the application layer requires a graphical interface to interact with these registers. This project aims to abstract the process of accessing these registers, making the system more modular and easier to debug.
+## Motivation
 
-The Ethernet switch, abbreviated as eth_switch, contains registers that need to be read and displayed in the GUI. The repository on GitHub, eth_switch, includes a software layer called devbus, which serves as an abstract interface for connections to the board. This layer ensures that any connection to the board adheres to a consistent set of functions, regardless of the type of connection.
+This project aims to create a user interface (GUI) for an Ethernet switch, specifically focusing on the application layer. The motivation stems from the need to provide a graphical interface for displaying the values of registers within the switch. The network system comprises five layers, with the network layer being handled by the switch. The requirement is to implement an application layer using ImGUI to display these register values.
 
-To implement the GUI, a connection must be established with the devbus to access the switch's registers. The devbus interface enables reading the switch's registers, but direct access in the GUI main can lead to code unmodularity and make debugging more challenging. Therefore, an intermediate software layer (ISWL) was created to handle the details of accessing the registers using the devbus. This layer exposes a library of functions to the GUI main, allowing it to read the registers without exposing the underlying implementation details.
+The Ethernet switch is abbreviated as eth_switch. It contains registers that need to be read and displayed in the GUI.
 
-### Functions Definitions
+## Implementation
 
-The regdefs header file contains 202 registers grouped into 10 distinct groups. Each group corresponds to a specific function in the ISWL library, which retrieves the values of the registers within each group. The functions in the ISWL library are responsible for mapping to these groups and returning a struct containing the array of registers specific to each group. The functions in the ISWL library are designed to be simple, receiving only a pointer to an instance of the devbus class. Each function maps to a single group of registers and returns a struct containing the array of registers for that group.
+The implementation details involve how to access and display the registers in the GUI. The eth_switch repository on GitHub includes a software layer called devbus, which serves as an abstract interface for any connection to the board. This layer provides essential functions that any connection to the board must have, regardless of its type or details.
 
-Get_GateScope returns GateScope_struct
-Get_GateScope returns GateScope_struct
-Get_i2cScope returns i2cScope_struct
-Get_NetScope returns NetScope_struct
-Get_RouteScope returns RouteScope_struct
-Get_i2cController returns i2cController_struct
-Get_Console returns Console_struct
-Get_Fan returns Fan_struct
-Get_FPGAConf returns fpgaConf_struct
-Get_CPUNetCtrl returns cpuNetCtrl_struct
+The devbus interface is responsible for abstracting the connection to the board, making it a standardized way to interact with the switch.
+
+To display the register values in the GUI, a connection must be established with the devbus. This connection enables the reading of the switch registers.
+
+Directly accessing the registers in the GUI main would make the system less modular and harder to debug. Additionally, the GUI main would contain details unrelated to how the registers are accessed, making code maintenance and debugging more challenging.
+
+To address these issues, Mohamed created an intermediate software layer (ISWL) between the devbus and the GUI main. This layer implements the details of how to access the switch registers using the devbus and exposes a library of functions to the GUI main for reading the registers.
+
+The ISWL is called read_regs_eth and contains functions responsible for retrieving the values of the register groups. Each group in the regdefs header file has a corresponding function in the read_regs_eth library, which returns a struct containing the array of registers specific to that group.
+
+The regdefs header file defines these groups, and each function in the ISWL maps to a specific group of registers. The functions only require a pointer to an instance of the devbus class.
+
+The functions in the ISWL include:
+
+- Get_GateScope, which returns a GateScope_struct.
+- Get_i2cScope, which returns an i2cScope_struct.
+- Get_NetScope, which returns a NetScope_struct.
+- Get_RouteScope, which returns a RouteScope_struct.
+- Get_i2cController, which returns an i2cController_struct.
+- Get_Console, which returns a Console_struct.
+- Get_Fan, which returns a Fan_struct.
+- Get_FPGAConf, which returns a fpgaConf_struct.
+- Get_CPUNetCtrl, which returns a cpuNetCtrl_struct.
+
+Each function retrieves the values of the registers in its respective group and returns a struct containing the array of registers specific to that group.

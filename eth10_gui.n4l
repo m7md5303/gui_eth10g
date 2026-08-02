@@ -71,24 +71,24 @@ Functions only receive a pointer to an instance of the devbus class
 
 Functions (attr) pointer to an instance of the devbus class
 
-Get_GateScope (gives) GateScope_struct 
+Get_GateScope function (return) GateScope_struct 
 
-Get_GateScope (gives) GateScope_struct 
+Get_GateScope function (return) GateScope_struct 
 
-Get_i2cScope (gives) i2cScope_struct
+Get_i2cScope function (return) i2cScope_struct
 
-Get_NetScope (gives) NetScope_struct
+Get_NetScope function (return) NetScope_struct
 
-Get_RouteScope (gives) RouteScope_struct
+Get_RouteScope function (return) RouteScope_struct
 
-Get_i2cController (gives) i2cController_struct
+Get_i2cController function (return) i2cController_struct
 
-Get_Console (gives) Console_struct
+Get_Console function (return) Console_struct
 
-Get_Fan (gives) Fan_struct
+Get_Fan function (return) Fan_struct
 
-Get_FPGAConf (gives) fpgaConf_struct
+Get_FPGAConf function (return) fpgaConf_struct
 
-Get_CPUNetCtrl (gives) cpuNetCtrl_struct
+Get_CPUNetCtrl function (return) cpuNetCtrl_struct
 
-Get_ZIPCtrlDBG (gives) zipctrldbg_struct
+Get_ZIPCtrlDBG function (return) zipctrldbg_struct
