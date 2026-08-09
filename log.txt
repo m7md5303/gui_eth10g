@@ -1,0 +1,353 @@
+flash regs
+4c68000
+
+Total Read Registers up to this step are 1
+
+emmcscope regs
+12c007fc
+280988ff
+
+Total Read Registers up to this step are 3
+
+i2cscope regs
+16a00100
+1008f909
+
+Total Read Registers up to this step are 5
+
+netscope regs
+70a001fc
+0
+
+Total Read Registers up to this step are 7
+
+routescope regs
+12c007fc
+20010842
+
+Total Read Registers up to this step are 9
+
+satadrpscope regs
+70a001fc
+0
+
+Total Read Registers up to this step are 11
+
+satalscope regs
+12c01ff4
+c0087f8
+
+Total Read Registers up to this step are 13
+
+satapsscope regs
+12c1ffff
+438e7808
+
+Total Read Registers up to this step are 15
+
+satarsscope regs
+12c007fc
+bc8922
+
+Total Read Registers up to this step are 17
+
+satatsscope regs
+12c007fc
+c27
+
+Total Read Registers up to this step are 19
+
+zipscope regs
+12c007fc
+5805b020
+
+Total Read Registers up to this step are 21
+
+consolescope regs
+60ff6000
+100
+6100
+
+Total Read Registers up to this step are 24
+
+fan regs
+1387
+1387
+11e
+23e022c0
+70050493
+c000
+13
+c8
+
+Total Read Registers up to this step are 32
+
+fsatactrl regs
+4000
+0
+0
+0
+10f04
+0
+
+Total Read Registers up to this step are 38
+
+emmccard regs
+2c002000
+0
+0
+0
+99580804
+40000000
+8
+0
+40
+
+Total Read Registers up to this step are 47
+
+sdio regs
+40000
+0
+0
+0
+999800fc
+0
+0
+0
+40
+
+Total Read Registers up to this step are 56
+
+fpgacfg regs
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+Total Read Registers up to this step are 76
+
+cpunet regs
+7f
+1434
+afa81234
+c0a80f01
+0
+0
+0
+0
+0
+0
+0
+0
+100000
+0
+0
+0
+100000
+0
+0
+4440
+450
+
+Total Read Registers up to this step are 97
+
+i2cctrl regs
+8f909
+f000
+400154d4
+1f4
+0
+7fffffa7
+7fffffa0
+10
+
+Total Read Registers up to this step are 105
+
+netmiscellaneous regs
+133564c0
+133564c0
+1333b2d0
+1331d030
+133564c0
+72824
+6800b0
+0
+41f
+1f
+94f5051e
+527dc60
+8f0d400
+23c3500
+23c3500
+284
+8d9ee20
+20000000
+5f5e100
+1
+20260808
+
+Total Read Registers up to this step are 126
+
+router regs
+0
+0
+0
+0
+0
+0
+0
+0
+400142c0
+0
+0
+0
+40114300
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+54000000
+54000000
+54000000
+54000000
+44044444
+126d77df
+1000010
+c05
+
+Total Read Registers up to this step are 186
+
+ddr regs
+9
+11
+10
+18
+b2f
+b2f
+aaaaaaaa
+
+Total Read Registers up to this step are 193
+
+netstat regs
+0
+
+Total Read Registers up to this step are 194
+
+satadrpctrl regs
+0
+d
+0
+ffffffff
+e824851c
+
+Total Read Registers up to this step are 199
+
+zipctrldbg regs
+a36000
+6e003a8
+0
+40015080
+2000900
+1
+ff000000
+0
+fb7
+19
+10
+2000978
+fb7
+0
+7fffffe0
+eb800001
+6e002f8
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+eb800020
+6e000a4
+80100d80
+80100d80
+0
+2
+80100d80
+80100d80
+0
+df1002ba
+80977765
+1c6d7c61
+de73217a
+80100d80
+80100d80
+0
+0
+0
+8ac315fe
+
+Total Read Registers up to this step are 249
+
+////////////////////////////////////////
+//     TEST COMPLETED SUCCESSFULLY   //
+//     READ REGISTERS ARE 249       //
+/////////////////////////////////////

@@ -27,7 +27,7 @@
 //importing general header
 #include <cstdint>
 //devbus
-#include "devbus.h"
+#include "./../test/eth10g/sw/host/devbus.h"
 //regdefs
 #include "reggroup_numbers.h"
 

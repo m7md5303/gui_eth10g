@@ -24,7 +24,7 @@
 //include the corresponding header file
 #include "read_regs_eth.h"
 //including regdefs header file
-#include "regdefs.h"
+#include "./../test/eth10g/sw/host/regdefs.h"
 
 typedef short int counter_width_t;
 
