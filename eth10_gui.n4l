@@ -60,20 +60,18 @@ Each struct (contain) array of registers specific to its group
 
 In this section, the functions are revealed
 
-The registers in regdefs header are 202 registers grouped in 10 groups
+The registers in regdefs header are 249 registers grouped in 25 groups
 
-regdefs header (contain) 202 registers
-        "      (consists) 10 groups
+regdefs header (contain) 249 registers
+        "      (consists) 25 groups
     
-This leads to having 10 functions where each function maps to a single group of registers
+This leads to having 25 functions where each function maps to a single group of registers
 
 Functions only receive a pointer to an instance of the devbus class
 
 Functions (attr) pointer to an instance of the devbus class
 
-Get_GateScope function (return) GateScope_struct 
-
-Get_GateScope function (return) GateScope_struct 
+Get_EMMCScope function (return) EMMCScope_struct
 
 Get_i2cScope function (return) i2cScope_struct
 
@@ -81,14 +79,42 @@ Get_NetScope function (return) NetScope_struct
 
 Get_RouteScope function (return) RouteScope_struct
 
-Get_i2cController function (return) i2cController_struct
+Get_SATA_DRPScope function (return) SATA_DRPScope_struct
+
+Get_SATA_LScope function (return) SATA_LScope_struct
+
+Get_SATA_PSScope function (return) SATA_PSScope_struct
+
+Get_SATA_RSScope function (return) SATA_RSScope_struct
+
+Get_SATA_TSScope function (return) SATA_TSScope_struct
+
+Get_zipScope function (return) zipScope_struct
 
 Get_Console function (return) Console_struct
 
 Get_Fan function (return) Fan_struct
 
-Get_FPGAConf function (return) fpgaConf_struct
+Get_SATA_ctrl function (return) SATA_ctrl_struct
 
-Get_CPUNetCtrl function (return) cpuNetCtrl_struct
+Get_EMMC_Card function (return) EMMC_Card_struct
 
-Get_ZIPCtrlDBG function (return) zipctrldbg_struct
+Get_SDIO function (return) SDIO_struct
+
+Get_fpgaCfg function (return) fpgaCfg_struct
+
+Get_CPUNet function (return) CPUNet_struct
+
+Get_i2cCtrl function (return) i2cCtrl_struct
+
+Get_NetMisc function (return) NetMisc_struct
+
+Get_Router function (return) Router_struct
+
+Get_DDR function (return) DDR_struct
+
+Get_NETSTAT function (return) NETSTAT_struct
+
+Get_SATA_DRPctrl function (return) SATA_DRPctrl_struct
+
+Get_ZIPCtrlDBG function (return) ZIPCtrlDBG_struct

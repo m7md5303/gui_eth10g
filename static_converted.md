@@ -69,35 +69,61 @@ Each struct contains array of registers specific to its group
 
 In this section, the functions are revealed
 
-The registers in regdefs header are 202 registers grouped in 10 groups
+The registers in regdefs header are 249 registers grouped in 25 groups
 
-regdefs header contains 202 registers
+regdefs header contains 249 registers
 
-regdefs header consists of 10 groups
+regdefs header consists of 25 groups
 
-This leads to having 10 functions where each function maps to a single group of registers
+This leads to having 25 functions where each function maps to a single group of registers
 
 Functions only receive a pointer to an instance of the devbus class
 
 Functions has an attribute pointer to an instance of the devbus class
 
-Get_GateScope gives GateScope_struct
+Get_EMMCScope function returns EMMCScope_struct
 
-Get_GateScope gives GateScope_struct
+Get_i2cScope function returns i2cScope_struct
 
-Get_i2cScope gives i2cScope_struct
+Get_NetScope function returns NetScope_struct
 
-Get_NetScope gives NetScope_struct
+Get_RouteScope function returns RouteScope_struct
 
-Get_RouteScope gives RouteScope_struct
+Get_SATA_DRPScope function returns SATA_DRPScope_struct
 
-Get_i2cController gives i2cController_struct
+Get_SATA_LScope function returns SATA_LScope_struct
 
-Get_Console gives Console_struct
+Get_SATA_PSScope function returns SATA_PSScope_struct
 
-Get_Fan gives Fan_struct
+Get_SATA_RSScope function returns SATA_RSScope_struct
 
-Get_FPGAConf gives fpgaConf_struct
+Get_SATA_TSScope function returns SATA_TSScope_struct
 
-Get_CPUNetCtrl gives cpuNetCtrl_struct
+Get_zipScope function returns zipScope_struct
+
+Get_Console function returns Console_struct
+
+Get_Fan function returns Fan_struct
+
+Get_SATA_ctrl function returns SATA_ctrl_struct
+
+Get_EMMC_Card function returns EMMC_Card_struct
+
+Get_SDIO function returns SDIO_struct
+
+Get_fpgaCfg function returns fpgaCfg_struct
+
+Get_CPUNet function returns CPUNet_struct
+
+Get_i2cCtrl function returns i2cCtrl_struct
+
+Get_NetMisc function returns NetMisc_struct
+
+Get_Router function returns Router_struct
+
+Get_DDR function returns DDR_struct
+
+Get_NETSTAT function returns NETSTAT_struct
+
+Get_SATA_DRPctrl function returns SATA_DRPctrl_struct
 
