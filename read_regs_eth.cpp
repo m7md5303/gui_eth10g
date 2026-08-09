@@ -28,178 +28,343 @@
 
 typedef short int counter_width_t;
 
-// gatescope compressed scope
-GateScope_struct Get_GateScope(DEVBUS* board_port) {
-    GateScope_struct gate_placeholder;
+
+// flash config compressed scope
+FlashCfg_struct Get_FlashCfg(DEVBUS* board_port){
     reg_width_t reg_addr;
     counter_width_t counter =0;
-    for (reg_addr = R_GATESCOPE; reg_addr <= R_GATESCOPED; reg_addr+=4)
-    {
-        gate_placeholder.GateScope_regs[counter] = board_port->readio(reg_addr) ; 
-        counter++;
-    }
-    return gate_placeholder;
-} 
+    FlashCfg_struct placeholder;
+
+    placeholder.FlashCfg_regs[counter] = board_port->readio(R_FLASHCFG);
+
+    return placeholder;
+}
+
+
+// emmcscope compressed scope
+EMMCScope_struct Get_EMMCScope(DEVBUS* board_port){
+    reg_width_t reg_addr;
+    counter_width_t counter =0;
+    EMMCScope_struct placeholder;
+
+    board_port->readi(R_EMMCSCOPE, EMMCScope_Group, placeholder.EMMCScope_regs);
+
+    return placeholder;
+}
+
 
 // i2cscope compressed scope
 i2cScope_struct Get_i2cScope(DEVBUS* board_port){
-    i2cScope_struct i2cSc_placeholder;
     reg_width_t reg_addr;
     counter_width_t counter =0;
-    for (reg_addr = R_I2CSCOPE; reg_addr <= R_I2CSCOPED; reg_addr+=4)
-    {
-        i2cSc_placeholder.i2cScope_regs[counter] = board_port->readio(reg_addr) ;
-        counter++;
-    }
-    return i2cSc_placeholder;
+    i2cScope_struct placeholder;
+
+    board_port->readi(R_I2CSCOPE, i2cScope_Group, placeholder.i2cScope_regs);
+
+    return placeholder;
 }
+
 
 // netscope compressed scope
 NetScope_struct Get_NetScope(DEVBUS* board_port){
-    NetScope_struct net_placeholder;
     reg_width_t reg_addr;
     counter_width_t counter =0;
-    for (reg_addr = R_NETSCOPE; reg_addr <= R_NETSCOPED; reg_addr+=4)
-    {
-        net_placeholder.NetScope_regs[counter] = board_port->readio(reg_addr) ;
-        counter++;
-    }
-    return net_placeholder;
+    NetScope_struct placeholder;
+
+    board_port->readi(R_NETSCOPE, netScope_Group, placeholder.NetScope_regs);
+
+    return placeholder;
 }
+
 
 // routescope compressed scope
 RouteScope_struct Get_RouteScope(DEVBUS* board_port){
-    RouteScope_struct route_placeholder;
     reg_width_t reg_addr;
     counter_width_t counter =0;
-    for (reg_addr = R_ROUTESCOPE; reg_addr <= R_ROUTESCOPED; reg_addr+=4)
-    {
-        route_placeholder.RouteScope_regs[counter] = board_port->readio(reg_addr) ;
-        counter++;
-    }
-    return route_placeholder;  
+    RouteScope_struct placeholder;
+
+    board_port->readi(R_ROUTESCOPE, RouteScope_Group, placeholder.RouteScope_regs);
+
+    return placeholder;
 }
 
-// I2C Controller registers
-i2cController_struct Get_i2cController(DEVBUS* board_port){
-    i2cController_struct i2cCtrl_placeholder;
+
+// SATA_DRPScope registers
+SATA_DRPScope_struct Get_SATA_DRPScope(DEVBUS* board_port){
     reg_width_t reg_addr;
     counter_width_t counter =0;
-    for (reg_addr = R_I2CCPU; reg_addr <= R_I2CCPU_CKCOUNT; reg_addr+=4)
-    {
-        i2cCtrl_placeholder.i2cController_regs[counter] = board_port->readio(reg_addr) ;
-        counter++;
-    }
-    
-    for (reg_addr = R_I2CDMA; reg_addr <= R_I2CDMA_LEN; reg_addr+=4)
-    {
-        i2cCtrl_placeholder.i2cController_regs[counter] = board_port->readio(reg_addr) ;
-        counter++;
-    }
-    return i2cCtrl_placeholder;
+    SATA_DRPScope_struct placeholder;
+
+    board_port->readi(R_SATADRPSCOPE, SATA_DRPScope_Group, placeholder.SATA_DRPScope_regs);
+
+    return placeholder;
 }
 
-// CONSOLE registers
+
+// SATA_LScope registers
+SATA_LScope_struct Get_SATA_LScope(DEVBUS* board_port){
+    reg_width_t reg_addr;
+    counter_width_t counter =0;
+    SATA_LScope_struct placeholder;
+
+    board_port->readi(R_SATALSCOPE, SATA_LScope_Group, placeholder.SATA_LScope_regs);
+
+    return placeholder;
+}
+
+
+// SATA_PSScope registers
+SATA_PSScope_struct Get_SATA_PSScope(DEVBUS* board_port){
+    reg_width_t reg_addr;
+    counter_width_t counter =0;
+    SATA_PSScope_struct placeholder;
+
+    board_port->readi(R_SATAPSCOPE, SATA_PSScope_Group, placeholder.SATA_PSScope_regs);
+
+    return placeholder;
+}
+
+
+// SATA_RSScope REGISTERS
+SATA_RSScope_struct Get_SATA_RSScope(DEVBUS* board_port){
+    reg_width_t reg_addr;
+    counter_width_t counter =0;
+    SATA_RSScope_struct placeholder;
+
+    board_port->readi(R_SATARSCOPE, SATA_RSScope_Group, placeholder.SATA_RSScope_regs);
+
+    return placeholder;
+}
+
+
+// SATA_TSScope registers
+SATA_TSScope_struct Get_SATA_TSScope(DEVBUS* board_port){
+    reg_width_t reg_addr;
+    counter_width_t counter =0;
+    SATA_TSScope_struct placeholder;
+
+    board_port->readi(R_SATATSCOPE, SATA_TSScope_Group, placeholder.SATA_TSScope_regs);
+
+    return placeholder;
+}
+
+
+// ZipSCoperegisters
+zipScope_struct Get_zipScope(DEVBUS* board_port){
+    reg_width_t reg_addr;
+    counter_width_t counter =0;
+    zipScope_struct placeholder;
+
+    board_port->readi(R_ZIPSCOPE, zipScope_Group, placeholder.zipScope_regs);
+
+    return placeholder;
+}
+
+
+// Console registers
 Console_struct Get_Console(DEVBUS* board_port){
-    Console_struct console_placeholder;
     reg_width_t reg_addr;
     counter_width_t counter =0;
-    for (reg_addr = R_CONSOLE_FIFO; reg_addr <= R_CONSOLE_UARTTX; reg_addr+=4)
-    {
-        console_placeholder.Console_regs[counter] = board_port->readio(reg_addr) ;
-        counter++;
-    }
-    return console_placeholder;
+    Console_struct placeholder;
+
+    board_port->readi(R_CONSOLE_FIFO, Console_Group, placeholder.Console_regs);
+
+    return placeholder;
 }
+
 
 // Fan registers
 Fan_struct Get_Fan(DEVBUS* board_port){
-    Fan_struct fan_placeholder;
     reg_width_t reg_addr;
     counter_width_t counter =0;
-    for (reg_addr = R_FAN_FPGAPWM; reg_addr <= R_VERSION; reg_addr+=4)
-    {
-        fan_placeholder.Fan_regs[counter] = board_port->readio(reg_addr) ;
-        counter++;
-    }
-    return fan_placeholder;
+    Fan_struct placeholder;
+
+    board_port->readi(R_FAN_FPGAPWM, Fan_Group, placeholder.Fan_regs);
+
+    return placeholder;
 }
 
-// FPGA CONFIG REGISTERS
-fpgaConf_struct Get_FPGAConf(DEVBUS* board_port){
-    fpgaConf_struct fpgaConf_placeholder;
+
+// SATA_ctrl registers
+SATA_ctrl_struct Get_SATA_ctrl(DEVBUS* board_port){
     reg_width_t reg_addr;
     counter_width_t counter =0;
-    for (reg_addr = R_CFG_CRC; reg_addr <= R_CFG_TIMER; reg_addr+=4)
-    {
-        fpgaConf_placeholder.fpgaConf_regs[counter] = board_port->readio(reg_addr) ;
-        counter++;
-    }
-    fpgaConf_placeholder.fpgaConf_regs[counter] = board_port->readio(R_CFG_BOOTSTS) ;
-    counter++;
-    fpgaConf_placeholder.fpgaConf_regs[counter] = board_port->readio(R_CFG_CTL1) ;
-    counter++;
-    fpgaConf_placeholder.fpgaConf_regs[counter] = board_port->readio(R_CFG_BSPI) ;
-    counter++;
-    return fpgaConf_placeholder;
+    SATA_ctrl_struct placeholder;
+
+    board_port->readi(R_SATA, SATA_ctrl_Group-2, placeholder.SATA_ctrl_regs);
+    board_port->readi(R_SATAPHY, 2, &placeholder.SATA_ctrl_regs[SATA_ctrl_Group-2]);
+
+    return placeholder;
 }
 
-// CPU Net Controller registers
-cpuNetCtrl_struct Get_CPUNetCtrl(DEVBUS* board_port){
-    cpuNetCtrl_struct CPU_placeholder;
+
+// EMMC_Card registers
+EMMC_Card_struct Get_EMMC_Card(DEVBUS* board_port){
     reg_width_t reg_addr;
     counter_width_t counter =0;
-    for (reg_addr = R_CPUNET; reg_addr <= R_CPUNETTXPKTS; reg_addr+=4)
-    {
-        CPU_placeholder.cpuNetCtrl_regs[counter] = board_port->readio(reg_addr) ;
-        counter++;
-    }
-    for (reg_addr = R_CPUNETTX_BASE; reg_addr <= R_CPUNETTX_DBG; reg_addr+=4)
-    {
-        CPU_placeholder.cpuNetCtrl_regs[counter] = board_port->readio(reg_addr) ;
-        counter++;
-    }
-    for (reg_addr = R_ROUTER; reg_addr <= R_ROUTERDBG4; reg_addr+=4)
-    {
-        CPU_placeholder.cpuNetCtrl_regs[counter] = board_port->readio(reg_addr) ;
-        counter++;
-    }
-    for (reg_addr = R_ROUTERNEVER; reg_addr <= R_ROUTERALWAYS; reg_addr+=4)
-    {
-        CPU_placeholder.cpuNetCtrl_regs[counter] = board_port->readio(reg_addr) ;
-        counter++;
-    }
-    CPU_placeholder.cpuNetCtrl_regs[counter] = board_port->readio(R_ROUTERDBGS) ;
-    counter++;
-    for (reg_addr = R_DDR3_PHY; reg_addr <= R_DDR3_PHYCTRLSTAT; reg_addr+=4)
-    {
-        CPU_placeholder.cpuNetCtrl_regs[counter] = board_port->readio(reg_addr) ;
-        counter++;
-    }
-    CPU_placeholder.cpuNetCtrl_regs[counter] = board_port->readio(R_DDR3_PHYRESET) ;
-    counter++;
-    CPU_placeholder.cpuNetCtrl_regs[counter] = board_port->readio(R_DDR3_PHYDBGSEL) ;
-    counter++;
-    CPU_placeholder.cpuNetCtrl_regs[counter] = board_port->readio(R_NETSTAT) ;
-    counter++;
-    CPU_placeholder.cpuNetCtrl_regs[counter] = board_port->readio(R_BKRAM) ;
-    counter++;
-    CPU_placeholder.cpuNetCtrl_regs[counter] = board_port->readio(R_DDR3_CONTROLLER) ;
-    counter++;
-    return CPU_placeholder;
+    EMMC_Card_struct placeholder;
+
+    board_port->readi(R_EMMC_CTRL, EMMC_Card_Group-4, placeholder.EMMC_Card_regs);
+    board_port->readi(R_EMMC_DMAA, 4, &placeholder.EMMC_Card_regs[EMMC_Card_Group-4]);
+
+    return placeholder;
 }
 
-// ZipCPU control/debug registers
-zipctrldbg_struct Get_ZIPCtrlDBG(DEVBUS* board_port){
-    zipctrldbg_struct ZIPCD_placeholder;
+
+// SDIO registers
+SDIO_struct Get_SDIO(DEVBUS* board_port){
     reg_width_t reg_addr;
     counter_width_t counter =0;
-    ZIPCD_placeholder.zipctrldbg_regs[counter] = board_port->readio(R_ZIPCTRL) ;
-    counter++;
-    for (reg_addr = R_ZIPREGS; reg_addr <= R_ZIPDMAC; reg_addr+=4)
-    {
-        ZIPCD_placeholder.zipctrldbg_regs[counter] = board_port->readio(reg_addr) ;
-        counter++;
-    }
-    return ZIPCD_placeholder;
+    SDIO_struct placeholder;
+
+    board_port->readi(R_SDIO_CTRL, SDIO_Group-4, placeholder.SDIO_regs);
+    board_port->readi(R_SDIO_DMAA, 4, &placeholder.SDIO_regs[SDIO_Group-4]);
+
+    return placeholder;
 }
+
+
+// fpgaCfg registers
+fpgaCfg_struct Get_fpgaCfg(DEVBUS* board_port){
+    reg_width_t reg_addr;
+    counter_width_t counter =0;
+    fpgaCfg_struct placeholder;
+
+    board_port->readi(R_CFG_CRC, fpgaCfg_Group-3, placeholder.fpgaCfg_regs);
+    counter = fpgaCfg_Group-3;
+    reg_addr = R_CFG_BOOTSTS;
+    placeholder.fpgaCfg_regs[counter] = board_port->readio(reg_addr);
+    counter++;
+    reg_addr = R_CFG_CTL1;
+    placeholder.fpgaCfg_regs[counter] = board_port->readio(reg_addr);
+    counter++;
+    reg_addr = R_CFG_BSPI;
+    placeholder.fpgaCfg_regs[counter] = board_port->readio(reg_addr);
+
+    return placeholder;
+}
+
+
+// CPUNet registers
+CPUNet_struct Get_CPUNet(DEVBUS* board_port){
+    reg_width_t reg_addr;
+    counter_width_t counter =0;
+    CPUNet_struct placeholder;
+
+    board_port->readi(R_CPUNET, CPUNet_Group-10, placeholder.CPUNet_regs);
+    board_port->readi(R_CPUNETTX_BASE, 10, &placeholder.CPUNet_regs[CPUNet_Group-10]);
+
+    return placeholder;
+}
+
+
+// i2cCtrl registers
+i2cCtrl_struct Get_i2cCtrl(DEVBUS* board_port){
+    reg_width_t reg_addr;
+    counter_width_t counter =0;
+    i2cCtrl_struct placeholder;
+
+    board_port->readi(R_I2CCPU, i2cCtrl_Group, placeholder.i2cCtrl_regs);
+
+    return placeholder;
+}
+
+
+// NetMisc registers
+NetMisc_struct Get_NetMisc(DEVBUS* board_port){
+    reg_width_t reg_addr;
+    counter_width_t counter =0;
+    NetMisc_struct placeholder;
+
+    board_port->readi(R_RXNETCK0, NetMisc_Group-16, placeholder.NetMisc_regs);
+    board_port->readi(R_BUILDTIME, 16, &placeholder.NetMisc_regs[NetMisc_Group-16]);
+
+    return placeholder;
+}
+
+
+// Router registers
+Router_struct Get_Router(DEVBUS* board_port){
+    reg_width_t reg_addr;
+    counter_width_t counter =0;
+    Router_struct placeholder;
+
+    board_port->readi(R_ROUTER0, Router_Group-3, placeholder.Router_regs);
+    board_port->readi(R_ROUTERNEVER, 2, &placeholder.Router_regs[Router_Group-3]);
+    counter = Router_Group-1;
+    reg_addr = R_ROUTERDBGS;
+    placeholder.Router_regs[counter] = board_port->readio(reg_addr);
+
+    return placeholder;
+}
+
+
+// DDR registers
+DDR_struct Get_DDR(DEVBUS* board_port){
+    reg_width_t reg_addr;
+    counter_width_t counter =0;
+    DDR_struct placeholder;
+
+    board_port->readi(R_DDR3_PHY, DDR_Group-2, placeholder.DDR_regs);
+    counter = DDR_Group-2;
+    reg_addr = R_DDR3_PHYRESET;
+    placeholder.DDR_regs[counter] = board_port->readio(reg_addr);
+    counter++;
+    reg_addr = R_DDR3_PHYDBGSEL;
+    placeholder.DDR_regs[counter] = board_port->readio(reg_addr);
+
+    return placeholder;
+}
+
+
+// NETSTAT registers
+NETSTAT_struct Get_NETSTAT(DEVBUS* board_port){
+    reg_width_t reg_addr;
+    counter_width_t counter =0;
+    NETSTAT_struct placeholder;
+
+    placeholder.NETSTAT_regs[counter] = board_port->readio(R_NETSTAT);
+
+    return placeholder;
+}
+
+
+// SATA_DRPctrl registers
+SATA_DRPctrl_struct Get_SATA_DRPctrl(DEVBUS* board_port){
+    reg_width_t reg_addr;
+    counter_width_t counter =0;
+    SATA_DRPctrl_struct placeholder;
+
+    reg_addr = R_PLLDRP;
+    placeholder.SATA_DRPctrl_regs[counter] = board_port->readio(reg_addr);
+    reg_addr = R_GTXDRP;
+    counter++;
+    placeholder.SATA_DRPctrl_regs[counter] = board_port->readio(reg_addr);
+    reg_addr = R_BKRAM;
+    counter++;
+    placeholder.SATA_DRPctrl_regs[counter] = board_port->readio(reg_addr);
+    reg_addr = R_FLASH;
+    counter++;
+    placeholder.SATA_DRPctrl_regs[counter] = board_port->readio(reg_addr);
+    reg_addr = R_DDR3_CONTROLLER;
+    counter++;
+    placeholder.SATA_DRPctrl_regs[counter] = board_port->readio(reg_addr);
+
+    return placeholder;
+}
+
+
+// ZIPCtrlDBG registers
+ZIPCtrlDBG_struct Get_ZIPCtrlDBG(DEVBUS* board_port){
+    reg_width_t reg_addr;
+    counter_width_t counter =0;
+    ZIPCtrlDBG_struct placeholder;
+
+    placeholder.ZIPCtrlDBG_regs[counter] = board_port->readio(0x80000000);
+    counter++;
+    board_port->readi(R_ZIPS0, ZIPCtrlDBG_Group-1, &placeholder.ZIPCtrlDBG_regs[counter]);
+
+    return placeholder;
+}
+
+

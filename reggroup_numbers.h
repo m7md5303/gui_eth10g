@@ -19,13 +19,29 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
-const int GateScope_Group = 2;
-const int i2cScope_Group =2;
-const int NetScope_Group = 2;
-const int RouteScope_Group =2;
-const int i2cController_Group = 8;
-const int Console_Group = 3;
-const int Fan_Group = 18;
-const int FPGAConf_Group = 20;
-const int CPUNetCtrl_Group = 91;
-const int ZIPCtrlDBG_Group = 51;
+
+const int FLASHCFG_Group = 1;
+const int EMMCScope_Group =2;
+const int i2cScope_Group = 2;
+const int netScope_Group=2;
+const int RouteScope_Group = 2;
+const int SATA_DRPScope_Group = 2;
+const int SATA_LScope_Group = 2;
+const int SATA_PSScope_Group = 2;
+const int SATA_RSScope_Group = 2;
+const int SATA_TSScope_Group = 2;
+const int zipScope_Group = 2;
+const int Console_Group =3;
+const int Fan_Group = 8;
+const int SATA_ctrl_Group = 6;
+const int EMMC_Card_Group = 9;
+const int SDIO_Group = 9;
+const int fpgaCfg_Group = 20;
+const int CPUNet_Group = 21;
+const int i2cCtrl_Group = 8;
+const int NetMisc_Group = 21;
+const int Router_Group = 60;
+const int DDR_Group = 7;
+const int NETSTAT_Group =1;
+const int SATA_DRPctrl_Group = 5;
+const int ZIPCtrlDBG_Group = 50;
