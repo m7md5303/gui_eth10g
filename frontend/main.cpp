@@ -139,7 +139,7 @@ void TextCenteredInCell(uint32_t value, uint8_t group_id, uint8_t reg_idx)
 {
 
     ImGuiIO& io = ImGui::GetIO();
-    ImGui::SetWindowFontScale(1.5f * (io.DisplaySize.x/1920.0));
+    ImGui::SetWindowFontScale(1.5f * (io.DisplaySize.x/1620.0));
 
     float cell_width = ImGui::GetColumnWidth();
     float text_width = ImGui::CalcTextSize("R_XXXXXXXXXX: 0xFFFFFFFF").x;
@@ -460,13 +460,13 @@ EmscriptenWebSocketCreateAttributes ws_attrs = {
         ImGui::Dummy(ImVec2(0.0f, 30.0f));
 
 
-        ImGui::SetWindowFontScale(1.5f);
+        ImGui::SetWindowFontScale(1.5f * (io.DisplaySize.x/1620.0));
 
         ImGui::PushStyleColor(ImGuiCol_Button,        ImVec4(202.0f/255.0f, 200.0f/255.0f,  207.0f/255.0f, 1.0f));
         ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4(255.0f/255.0f, 255.0f/255.0f, 255.0f/255.0f, 1.0f));
         ImGui::PushStyleColor(ImGuiCol_Text,          ImVec4(0.0f, 0.0f, 0.0f, 1.0f));
 
-        ImGui::SetCursorPosX(100.0f);
+        ImGui::SetCursorPosX(100.0f * (io.DisplaySize.x/1620.0));
 
         if(ImGui::Button("FLASHCFG_tab")){
             SelectTab(FLASHCFG_tab , tabs);
@@ -502,7 +502,7 @@ EmscriptenWebSocketCreateAttributes ws_attrs = {
 
         ImGui::Dummy(ImVec2(0.0f, 20.0f));
 
-        ImGui::SetCursorPosX(100.0f);
+        ImGui::SetCursorPosX(100.0f * (io.DisplaySize.x/1620.0));
 
         if(ImGui::Button("SATA_RS Scope_tab")){
             SelectTab(SATA_RSScope_tab , tabs);
@@ -545,7 +545,7 @@ EmscriptenWebSocketCreateAttributes ws_attrs = {
         
         ImGui::Dummy(ImVec2(0.0f, 20.0f));
 
-        ImGui::SetCursorPosX(100.0f);
+        ImGui::SetCursorPosX(100.0f * (io.DisplaySize.x/1620.0));
 
         if(ImGui::Button("CPUNet_tab")){
             SelectTab( CPUNet_tab, tabs);
