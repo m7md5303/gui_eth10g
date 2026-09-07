@@ -41,31 +41,31 @@ uint8_t update_guard=UPDATE_RATE;//control update rate
 //received data
 std::string payload_rec = "00000";
 //Register Names
-const char* FLASHCFG_Regname[FLASHCFG_Group] = {"R_FLASHCFG"};
-const char* const EMMCScope_Regname[EMMCScope_Group] = {"R_EMMCSCOPE", "R_EMMCSCOPED"};
-const char* const i2cScope_Regname[i2cScope_Group] = {"R_I2CSCOPE", "R_I2CSCOPED"};
-const char* const netScope_Regname[netScope_Group] = {"R_NETSCOPE", "R_NETSCOPED"};
-const char* const RouteScope_Regname[RouteScope_Group] = {"R_ROUTESCOPE", "R_ROUTESCOPED"};
-const char* const SATA_DRPScope_Regname[SATA_DRPScope_Group] = {"R_SATADRPSCOPE", "R_SATADRPSCOPED"};
-const char* const SATA_LScope_Regname[SATA_LScope_Group] = {"R_SATALSCOPE", "R_SATALSCOPED"};
-const char* const SATA_PSScope_Regname[SATA_PSScope_Group] = {"R_SATAPSCOPE", "R_SATAPSCOPED"};
-const char* const SATA_RSScope_Regname[SATA_RSScope_Group] = {"R_SATARSCOPE", "R_SATARSCOPED"};
-const char* const SATA_TSScope_Regname[SATA_TSScope_Group] = {"R_SATATSCOPE", "R_SATATSCOPED"};
-const char* const zipScope_Regname[zipScope_Group] = {"R_ZIPSCOPE", "R_ZIPSCOPED"};
-const char* const Console_Regname[Console_Group] = {"R_CONSOLE_FIFO", "R_CONSOLE_UARTRX", "R_CONSOLE_UARTTX"};
-const char* const Fan_Regname[Fan_Group] = {"R_FAN_FPGAPWM", "R_FAN_SYSPWM", "R_FAN_TACH", "R_FAN_TEMP", "R_FAN", "R_FAN_OVW", "R_FAN_ADDR", "R_FAN_CKCOUNT"};
-const char* const SATA_ctrl_Regname[SATA_ctrl_Group] = {"R_SATA", "R_LBALO", "R_LBAHI", "R_SATACOUNT", "R_SATAPHY", "R_SATAADDR"};
-const char* const EMMC_Card_Regname[EMMC_Card_Group] = {"R_EMMC_CTRL", "R_EMMC_DATA", "R_EMMC_FIFOA", "R_EMMC_FIFOB", "R_EMMC_PHY", "R_EMMC_DMAA", "R_EMMC_DMALN", "R_EMMC_TRIM", "R_EMMC_RXTRIM"};
-const char* const SDIO_Regname[SDIO_Group] = {"R_SDIO_CTRL", "R_SDIO_DATA", "R_SDIO_FIFOA", "R_SDIO_FIFOB", "R_SDIO_PHY", "R_SDIO_DMAA", "R_SDIO_DMALN", "R_SDIO_TRIM", "R_SDIO_RXTRIM"};
-const char* const fpgaCfg_Regname[fpgaCfg_Group] = {"R_CFG_CRC", "R_CFG_FAR", "R_CFG_FDRI", "R_CFG_FDRO", "R_CFG_CMD", "R_CFG_CTL0", "R_CFG_MASK", "R_CFG_STAT", "R_CFG_LOUT", "R_CFG_COR0", "R_CFG_MFWR", "R_CFG_CBC", "R_CFG_IDCODE", "R_CFG_AXSS", "R_CFG_COR1", "R_CFG_WBSTAR", "R_CFG_TIMER", "R_CFG_BOOTSTS", "R_CFG_CTL1", "R_CFG_BSPI"};
-const char* const CPUNet_Regname[CPUNet_Group] = {"R_CPUNET", "R_CPUNETMAC1", "R_CPUNETMAC2", "R_CPUNETIPV4", "R_CPUNETIPV6P1", "R_CPUNETIPV6P2", "R_CPUNETIPV6P3", "R_CPUNETIPV6P4", "R_CPUNETRXDROPS", "R_CPUNETRXPKTS", "R_CPUNETTXPKTS", "R_CPUNETTX_BASE", "R_CPUNETTX_LEN", "R_CPUNETTX_RPTR", "R_CPUNETTX_WPTR", "R_CPUNETRX_BASE", "R_CPUNETRX_LEN", "R_CPUNETRX_RPTR", "R_CPUNETRX_WPTR", "R_CPUNETRX_DBG", "R_CPUNETTX_DBG"};
-const char* const i2cCtrl_Regname[i2cCtrl_Group] = {"R_I2CCPU", "R_I2CCPU_OVW", "R_I2CCPU_ADDR", "R_I2CCPU_CKCOUNT", "R_I2CDMA", "R_I2CDMA_ADDR", "R_I2CDMA_BASE", "R_I2CDMA_LEN"};
-const char* const NetMisc_Regname[NetMisc_Group] = {"R_RXNETCK0", "R_RXNETCK1", "R_RXNETCK2", "R_RXNETCK3", "R_TXNETCLK", "R_BUILDTIME", "R_GPIO", "R_NETDBG", "R_NETLOCK", "R_NETRESET", "R_PWRCOUNT", "R_RTCCOUNT", "R_SATAREF", "R_SATARX", "R_SATATX", "R_SCOPEPIC", "R_SICLKFREQ", "R_SIREFCLK", "R_SIREFFREQ", "R_SPIO", "R_VERSION"};
-const char* const Router_Regname[Router_Group] = {"R_ROUTER0", "R_ROUTERSZ0", "R_ROUTERWR0", "R_ROUTERRD0", "R_ROUTER1", "R_ROUTERSZ1", "R_ROUTERWR1", "R_ROUTERRD1", "R_ROUTER2", "R_ROUTERSZ2", "R_ROUTERWR2", "R_ROUTERRD2", "R_ROUTER3", "R_ROUTERSZ3", "R_ROUTERWR3", "R_ROUTERRD3", "R_ROUTERPK0", "R_ROUTERBY0", "R_ROUTERFP0", "R_ROUTERFB0", "R_ROUTERPK1", "R_ROUTERBY1", "R_ROUTERFP1", "R_ROUTERFB1", "R_ROUTERPK2", "R_ROUTERBY2", "R_ROUTERFP2", "R_ROUTERFB2", "R_ROUTERPK3", "R_ROUTERBY3", "R_ROUTERFP3", "R_ROUTERFB3", "R_ROUTERNWH0", "R_ROUTERNWL0", "R_ROUTERLKH0", "R_ROUTERLKL0", "R_ROUTERNWH1", "R_ROUTERNWL1", "R_ROUTERLKH1", "R_ROUTERLKL1", "R_ROUTERNWH2", "R_ROUTERNWL2", "R_ROUTERLKH2", "R_ROUTERLKL2", "R_ROUTERNWH3", "R_ROUTERNWL3", "R_ROUTERLKH3", "R_ROUTERLKL3", "R_ROUTERNWH4", "R_ROUTERNWL4", "R_ROUTERLKH4", "R_ROUTERLKL4", "R_ROUTERDBG0", "R_ROUTERDBG1", "R_ROUTERDBG2", "R_ROUTERDBG3", "R_ROUTERDBG4", "R_ROUTERNEVER", "R_ROUTERALWAYS", "R_ROUTERDBGS"};
-const char* const DDR_Regname[DDR_Group] = {"R_DDR3_PHY", "R_DDR3_PHYSTAT1", "R_DDR3_PHYSTAT2", "R_DDR3_PHYSTAT3", "R_DDR3_PHYCTRLSTAT", "R_DDR3_PHYRESET", "R_DDR3_PHYDBGSEL"};
-const char* const NETSTAT_Regname[NETSTAT_Group] = {"R_NETSTAT"};
-const char* const SATA_DRPctrl_Regname[SATA_DRPctrl_Group] = {"R_PLLDRP", "R_GTXDRP", "R_BKRAM", "R_FLASH", "R_DDR3_CONTROLLER"};
-const char* const ZIPCtrlDBG_Regname[ZIPCtrlDBG_Group] = {"R_ZIPCTRL", "R_ZIPS0", "R_ZIPS1", "R_ZIPS2", "R_ZIPS3", "R_ZIPS4", "R_ZIPS5", "R_ZIPS6", "R_ZIPS7", "R_ZIPS8", "R_ZIPS9", "R_ZIPS10", "R_ZIPS11", "R_ZIPS12", "R_ZIPSSP", "R_ZIPCC", "R_ZIPPC", "R_ZIPU0", "R_ZIPU1", "R_ZIPU2", "R_ZIPU3", "R_ZIPU4", "R_ZIPU5", "R_ZIPU6", "R_ZIPU7", "R_ZIPU8", "R_ZIPU9", "R_ZIPU10", "R_ZIPU11", "R_ZIPU12", "R_ZIPUSP", "R_ZIPUCC", "R_ZIPUPC", "R_ZIPPIC", "R_ZIPWDOG", "R_ZIPBDOG", "R_ZIPAPIC", "R_ZIPTIMA", "R_ZIPTIMB", "R_ZIPTIMC", "R_ZIPJIFF", "R_ZIPMTASK", "R_ZIPMMSTL", "R_ZIPMPSTL", "R_ZIPMINSN", "R_ZIPUTASK", "R_ZIPUMSTL", "R_ZIPUPSTL", "R_ZIPUINSN", "R_ZIPDMAC"};
+const char* FLASHCFG_Regname[FLASHCFG_Group] = {"FLASHCFG"};
+const char* const EMMCScope_Regname[EMMCScope_Group] = {"EMMCSCOPE", "EMMCSCOPED"};
+const char* const i2cScope_Regname[i2cScope_Group] = {"I2CSCOPE", "I2CSCOPED"};
+const char* const netScope_Regname[netScope_Group] = {"NETSCOPE", "NETSCOPED"};
+const char* const RouteScope_Regname[RouteScope_Group] = {"ROUTESCOPE", "ROUTESCOPED"};
+const char* const SATA_DRPScope_Regname[SATA_DRPScope_Group] = {"SATADRPSCOPE", "SATADRPSCOPED"};
+const char* const SATA_LScope_Regname[SATA_LScope_Group] = {"SATALSCOPE", "SATALSCOPED"};
+const char* const SATA_PSScope_Regname[SATA_PSScope_Group] = {"SATAPSCOPE", "SATAPSCOPED"};
+const char* const SATA_RSScope_Regname[SATA_RSScope_Group] = {"SATARSCOPE", "SATARSCOPED"};
+const char* const SATA_TSScope_Regname[SATA_TSScope_Group] = {"SATATSCOPE", "SATATSCOPED"};
+const char* const zipScope_Regname[zipScope_Group] = {"ZIPSCOPE", "ZIPSCOPED"};
+const char* const Console_Regname[Console_Group] = {"CONSOLE_FIFO", "CONSOLE_UARTRX", "CONSOLE_UARTTX"};
+const char* const Fan_Regname[Fan_Group] = {"FAN_FPGAPWM", "FAN_SYSPWM", "FAN_TACH", "FAN_TEMP", "FAN", "FAN_OVW", "FAN_ADDR", "FAN_CKCOUNT"};
+const char* const SATA_ctrl_Regname[SATA_ctrl_Group] = {"SATA", "LBALO", "LBAHI", "SATACOUNT", "SATAPHY", "SATAADDR"};
+const char* const EMMC_Card_Regname[EMMC_Card_Group] = {"EMMC_CTRL", "EMMC_DATA", "EMMC_FIFOA", "EMMC_FIFOB", "EMMC_PHY", "EMMC_DMAA", "EMMC_DMALN", "EMMC_TRIM", "EMMC_RXTRIM"};
+const char* const SDIO_Regname[SDIO_Group] = {"SDIO_CTRL", "SDIO_DATA", "SDIO_FIFOA", "SDIO_FIFOB", "SDIO_PHY", "SDIO_DMAA", "SDIO_DMALN", "SDIO_TRIM", "SDIO_RXTRIM"};
+const char* const fpgaCfg_Regname[fpgaCfg_Group] = {"CFG_CRC", "CFG_FAR", "CFG_FDRI", "CFG_FDRO", "CFG_CMD", "CFG_CTL0", "CFG_MASK", "CFG_STAT", "CFG_LOUT", "CFG_COR0", "CFG_MFWR", "CFG_CBC", "CFG_IDCODE", "CFG_AXSS", "CFG_COR1", "CFG_WBSTAR", "CFG_TIMER", "CFG_BOOTSTS", "CFG_CTL1", "CFG_BSPI"};
+const char* const CPUNet_Regname[CPUNet_Group] = {"CPUNET", "CPUNETMAC1", "CPUNETMAC2", "CPUNETIPV4", "CPUNETIPV6P1", "CPUNETIPV6P2", "CPUNETIPV6P3", "CPUNETIPV6P4", "CPUNETRXDROPS", "CPUNETRXPKTS", "CPUNETTXPKTS", "CPUNETTX_BASE", "CPUNETTX_LEN", "CPUNETTX_RPTR", "CPUNETTX_WPTR", "CPUNETRX_BASE", "CPUNETRX_LEN", "CPUNETRX_RPTR", "CPUNETRX_WPTR", "CPUNETRX_DBG", "CPUNETTX_DBG"};
+const char* const i2cCtrl_Regname[i2cCtrl_Group] = {"I2CCPU", "I2CCPU_OVW", "I2CCPU_ADDR", "I2CCPU_CKCOUNT", "I2CDMA", "I2CDMA_ADDR", "I2CDMA_BASE", "I2CDMA_LEN"};
+const char* const NetMisc_Regname[NetMisc_Group] = {"RXNETCK0", "RXNETCK1", "RXNETCK2", "RXNETCK3", "TXNETCLK", "BUILDTIME", "GPIO", "NETDBG", "NETLOCK", "NETRESET", "PWRCOUNT", "RTCCOUNT", "SATAREF", "SATARX", "SATATX", "SCOPEPIC", "SICLKFREQ", "SIREFCLK", "SIREFFREQ", "SPIO", "VERSION"};
+const char* const Router_Regname[Router_Group] = {"ROUTER0", "ROUTERSZ0", "ROUTERWR0", "ROUTERRD0", "ROUTER1", "ROUTERSZ1", "ROUTERWR1", "ROUTERRD1", "ROUTER2", "ROUTERSZ2", "ROUTERWR2", "ROUTERRD2", "ROUTER3", "ROUTERSZ3", "ROUTERWR3", "ROUTERRD3", "ROUTERPK0", "ROUTERBY0", "ROUTERFP0", "ROUTERFB0", "ROUTERPK1", "ROUTERBY1", "ROUTERFP1", "ROUTERFB1", "ROUTERPK2", "ROUTERBY2", "ROUTERFP2", "ROUTERFB2", "ROUTERPK3", "ROUTERBY3", "ROUTERFP3", "ROUTERFB3", "ROUTERNWH0", "ROUTERNWL0", "ROUTERLKH0", "ROUTERLKL0", "ROUTERNWH1", "ROUTERNWL1", "ROUTERLKH1", "ROUTERLKL1", "ROUTERNWH2", "ROUTERNWL2", "ROUTERLKH2", "ROUTERLKL2", "ROUTERNWH3", "ROUTERNWL3", "ROUTERLKH3", "ROUTERLKL3", "ROUTERNWH4", "ROUTERNWL4", "ROUTERLKH4", "ROUTERLKL4", "ROUTERDBG0", "ROUTERDBG1", "ROUTERDBG2", "ROUTERDBG3", "ROUTERDBG4", "ROUTERNEVER", "ROUTERALWAYS", "ROUTERDBGS"};
+const char* const DDR_Regname[DDR_Group] = {"DDR3_PHY", "DDR3_PHYSTAT1", "DDR3_PHYSTAT2", "DDR3_PHYSTAT3", "DDR3_PHYCTRLSTAT", "DDR3_PHYRESET", "DDR3_PHYDBGSEL"};
+const char* const NETSTAT_Regname[NETSTAT_Group] = {"NETSTAT"};
+const char* const SATA_DRPctrl_Regname[SATA_DRPctrl_Group] = {"PLLDRP", "GTXDRP", "BKRAM", "FLASH", "DDR3_CONTROLLER"};
+const char* const ZIPCtrlDBG_Regname[ZIPCtrlDBG_Group] = {"ZIPCTRL", "ZIPS0", "ZIPS1", "ZIPS2", "ZIPS3", "ZIPS4", "ZIPS5", "ZIPS6", "ZIPS7", "ZIPS8", "ZIPS9", "ZIPS10", "ZIPS11", "ZIPS12", "ZIPSSP", "ZIPCC", "ZIPPC", "ZIPU0", "ZIPU1", "ZIPU2", "ZIPU3", "ZIPU4", "ZIPU5", "ZIPU6", "ZIPU7", "ZIPU8", "ZIPU9", "ZIPU10", "ZIPU11", "ZIPU12", "ZIPUSP", "ZIPUCC", "ZIPUPC", "ZIPPIC", "ZIPWDOG", "ZIPBDOG", "ZIPAPIC", "ZIPTIMA", "ZIPTIMB", "ZIPTIMC", "ZIPJIFF", "ZIPMTASK", "ZIPMMSTL", "ZIPMPSTL", "ZIPMINSN", "ZIPUTASK", "ZIPUMSTL", "ZIPUPSTL", "ZIPUINSN", "ZIPDMAC"};
 //Register Names ptrs
 const char* const* reg_ptr_array[GROUP_NO] = {
     FLASHCFG_Regname,
@@ -94,6 +94,7 @@ const char* const* reg_ptr_array[GROUP_NO] = {
     SATA_DRPctrl_Regname,
     ZIPCtrlDBG_Regname
 };
+
 //create websocket 
 EMSCRIPTEN_WEBSOCKET_T ws_handle;
 bool is_ws_connected = false;
@@ -137,7 +138,8 @@ void SelectTab(bool& selected, bool** tabs)
 void TextCenteredInCell(uint32_t value, uint8_t group_id, uint8_t reg_idx)
 {
 
-    ImGui::SetWindowFontScale(1.5f);
+    ImGuiIO& io = ImGui::GetIO();
+    ImGui::SetWindowFontScale(1.5f * (io.DisplaySize.x/1920.0));
 
     float cell_width = ImGui::GetColumnWidth();
     float text_width = ImGui::CalcTextSize("R_XXXXXXXXXX: 0xFFFFFFFF").x;
@@ -440,7 +442,8 @@ EmscriptenWebSocketCreateAttributes ws_attrs = {
             ImGuiWindowFlags_NoMove |
             ImGuiWindowFlags_NoResize |
             ImGuiWindowFlags_NoCollapse |
-            ImGuiWindowFlags_NoTitleBar
+            ImGuiWindowFlags_NoTitleBar |
+            ImGuiWindowFlags_HorizontalScrollbar
         );
 
         ImGui::SetWindowFontScale(3.0f);//bigger size for title
