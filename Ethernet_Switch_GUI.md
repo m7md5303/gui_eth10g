@@ -18,10 +18,6 @@ The functions in the ISWL are defined to retrieve the values of the 249 register
 
 ### Front End Implementation
 
-The front-end implementation uses ImGUI, an open-source library available on GitHub. ImGUI is chosen for its flexibility in rendering graphics and transitions. The front-end GUI is compiled to WebAssembly (WASM) and deployed as a web application, allowing users to view it in their browser. The front-end receives the register values from the backend and displays them in a user-friendly manner, ensuring readability and understanding.
-
-### Front End Implementation
-
 The front-end GUI is implemented using ImGUI, which is an open-source library available on GitHub. ImGUI is chosen for its flexibility in rendering graphics and transitions. The front-end GUI is compiled to WebAssembly (WASM) and deployed as a web application, allowing users to view it in their browser. The front-end receives the register values from the backend and displays them in a user-friendly manner, ensuring readability and understanding.
 
 The GUI design is adjusted to be user-friendly. There are 25 buttons corresponding to the 25 groups of registers. Each button displays the register values for its corresponding group. The register values are displayed in a table-like view, with each value accompanied by its corresponding register name. Additionally, the group name is displayed beneath the table to inform the user which group is currently being displayed. The register values are updated every 200 frames to avoid overwhelming the backend.
