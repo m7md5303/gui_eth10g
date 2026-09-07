@@ -23,7 +23,7 @@ python3 -m http.server 3000 -d frontend
 ```
 - On your PC, open a local terminal then run:
 ```shell
-ssh -p 2639 -L 3000:127.0.0.1:3000 -L 9001:127.0.0.1:9001 <user_name>@<user_IP_address>
+ssh -p <ssh port> -L 3000:127.0.0.1:3000 -L 9001:127.0.0.1:9001 <user_name>@<user_IP_address>
 ```
 This creates two ssh tunnels: one for backend and the other for the frontend
 You shall need to contact an admin to know your IP
