@@ -136,8 +136,11 @@ void SelectTab(bool& selected, bool** tabs)
 
 void TextCenteredInCell(uint32_t value, uint8_t group_id, uint8_t reg_idx)
 {
+
+    ImGui::SetWindowFontScale(1.5f);
+
     float cell_width = ImGui::GetColumnWidth();
-    float text_width = ImGui::CalcTextSize("R_XXXXXXXXXXXXXXXX: 0xFFFFFFFF").x;
+    float text_width = ImGui::CalcTextSize("R_XXXXXXXXXX: 0xFFFFFFFF").x;
     
     // Calculate centered cursor position within the current cell
     float start_x = ImGui::GetCursorPosX() + (cell_width - text_width) * 0.5f;
@@ -146,8 +149,6 @@ void TextCenteredInCell(uint32_t value, uint8_t group_id, uint8_t reg_idx)
     if (start_x > ImGui::GetCursorPosX()) {
         ImGui::SetCursorPosX(start_x);
     }
-
-    ImGui::SetWindowFontScale(1.5f);
     
     ImGui::TextColored(
     ImVec4(0.0f, 0.0f, 0.0f, 1.0f),
@@ -169,7 +170,7 @@ void DrawRegisterTabs(uint8_t group , uint8_t group_id_f)
     ImGui::PushStyleColor(ImGuiCol_TableRowBg, ImVec4(1, 1, 1, 1));
     ImGui::PushStyleColor(ImGuiCol_TableRowBgAlt, ImVec4(255.0f/255.0f, 255.0f/255.0f, 255.0f/255.0f, 1.0f));
     ImGui::Dummy(ImVec2(0.0f, 50.0f));
-    if (ImGui::BeginTable("MyTable", NumberOfColumns, ImGuiTableFlags_Borders | ImGuiTableFlags_RowBg | ImGuiTableFlags_SizingStretchSame))
+    if (ImGui::BeginTable("MyTable", NumberOfColumns, ImGuiTableFlags_Borders | ImGuiTableFlags_RowBg | ImGuiTableFlags_SizingStretchSame ))
     {
         for (uint8_t i = 0; i < 10; i++)
         {
