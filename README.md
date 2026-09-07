@@ -31,3 +31,4 @@ You shall need to contact an admin to know your IP
 ```web
 http://localhost:3000
 ```
+<img src = "https://github.com/m7md5303/gui_eth10g/blob/main/frontend/snippet.png"/>
