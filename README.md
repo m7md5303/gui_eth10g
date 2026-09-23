@@ -15,6 +15,7 @@ For running the GUI, you should go through some steps:
 - run:
 ```shell
 cd backend
+chmod +x backend
 ./backend
 ```
 - In another terminal in the root directory of the cloned project run:
